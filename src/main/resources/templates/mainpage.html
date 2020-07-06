@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add CSSf</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<h3>XML Parser</h3>
+This small app was containerized via Docker and run AWS Elastic Beanstalk<br/>
+<a href="https://github.com/pinegink/storage">source code</a>
+<h4>Task</h4>
+<p>Input of a program is an XML which lists boxes and items.</p>
+App should find all items of a given color inside of a given box
+<ul type="circle">
+    <li>Boxes can be empty, contain items or contain other boxes</li>
+    <li>App should support any nesting degree</li>
+</ul>
+<p>XML may have the following format:</p><br/>
+<textarea readonly class="noresize" rows="15" cols="50" style="border:none;">
+<?xml version="1.0" encoding="UTF-8"?>
+<Storage>
+    <Box id="1">
+        <Item id="1"/>
+        <Item color="red" id="2"/>
+        <Box id="3">
+            <Item id="3" color="red" />
+            <Item id="4" color="black" />
+        </Box>
+        <Box id="6"/>
+        <Item id="5"/>
+    </Box>
+    <Item id="6"/>
+</Storage>
+</textarea>
+<p>Insert your XML here:</p>
+<form action="#" th:action="@{/}" th:object="${dto}" method="POST">
+    <textarea rows="20" cols="50" th:field="*{xml}">
+    </textarea><br/><br/>
+    color: <input type="text" name="color" th:field="*{color}"><br/><br/>
+    box: <input type="number" required name="box" th:field="*{box}"><br/><br/>
+
+    <button name="submit" type="submit" value="0">Submit</button>
+</form><br/>
+
+result: <span th:text="${result}"></span>
+
+</body>
+</html>
+
+
+

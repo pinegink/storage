@@ -1,0 +1,18 @@
+body{
+    padding: 30px;
+    font-family: Arial, "Helvetica Neue",   Helvetica, sans-serif;
+}
+.reference{
+    position: relative;
+}
+.image{
+    position: absolute;
+
+    top:110px;
+    left:550px;
+    width: 5%;
+    height: auto;
+}
+.noresize{
+    resize: none;
+}
