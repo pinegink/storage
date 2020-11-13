@@ -7,6 +7,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.1.RELEASE</version>
 		<relativePath/>
+		ффффффффффффффффффффффф
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>storage</artifactId>
